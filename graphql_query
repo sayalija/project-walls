@@ -1,8 +1,17 @@
-query {
-  stratego:repository(owner: "STEP-tw", name: "stratego-gamblers") {
+{
+  stratego: repository(owner: "STEP-tw", name: "stratego-gamblers") {
     ...projectDetails
   }
-  basic:repository(owner: "craftybones", name: "basic_tests") {
+  acquire: repository(owner: "STEP-tw",, name: "acquire-legends") {
+    ...projectDetails
+  }
+  ludo: repository(owner: "STEP-tw",, name: "ludo-dvamps") {
+    ...projectDetails
+  }
+  battleship: repository(owner: "STEP-tw",, name: "battleship-phoenix") {
+    ...projectDetails
+  }
+  cluedo: repository(owner: "STEP-tw",, name: "cluedo-brainyfools") {
     ...projectDetails
   }
 }
@@ -14,7 +23,6 @@ fragment projectDetails on Repository {
       columns(first: 10) {
         nodes {
           name
-
           cards(first: 50) {
             nodes {
               content {
