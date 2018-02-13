@@ -1,8 +1,24 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-app.set('view engine', 'pug')
+const fs = require('fs');
+const query = fs.readFileSync('./graphql_query', 'utf8');
+const GithubQuery = require('./githubQuery.js');
+const token = process.env.GITHUB_TOKEN;
 
-app.get('/', (req, res) => res.render('index'))
+let data={data:{}};
+const githubQuery=new GithubQuery(token,query,(body)=>{
+  console.log("Received update...");
+  data=JSON.parse(body);
+});
 
-app.listen(3000, () => console.log('App listening on port 3000!'))
+githubQuery.fetch();
+
+app.set('view engine', 'pug');
+
+app.get('/', function(req, res) {
+  console.log(data);
+  res.render('index', {projectsData: data.data});
+})
+
+app.listen(3000, () => console.log('App listening on port 3000!'));

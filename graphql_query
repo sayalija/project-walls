@@ -1,0 +1,40 @@
+query {
+  stratego:repository(owner: "STEP-tw", name: "stratego-gamblers") {
+    ...projectDetails
+  }
+  basic:repository(owner: "craftybones", name: "basic_tests") {
+    ...projectDetails
+  }
+}
+
+fragment projectDetails on Repository {
+  projects(first: 2) {
+    nodes {
+      name
+      columns(first: 10) {
+        nodes {
+          name
+
+          cards(first: 50) {
+            nodes {
+              content {
+                ... on Issue {
+                  title
+                  milestone {
+                    title
+                  }
+                  labels(first: 5) {
+                    nodes {
+                      name
+                      color
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

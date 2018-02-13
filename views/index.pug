@@ -1,3 +1,15 @@
 html
+  head
+    style
+      include style.css
   body
-    h1 Hello World...!
+    h1 Project Dash Board
+    div
+      each data in projectsData
+        div(class="project")
+          - let projectDetails=data.projects.nodes[0]
+          h3= projectDetails.name
+          div(class="lanes")
+            - lanes=projectDetails.columns.nodes
+              each lane in lanes
+                div=lane.name
