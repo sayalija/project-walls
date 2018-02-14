@@ -21,8 +21,9 @@ app.get('/', function(req, res) {
 })
 
 app.get('/:project', function(req, res) {
-  console.log(req.params.project);
-  let projectDetails=data.data[req.params.project].projects.nodes[0];
+  let projectName=req.params.project.toLowerCase();
+  console.log("fecthing deatails for ", projectName);
+  let projectDetails=data.data[projectName].projects.nodes[0];
   res.render('project', {projectDetails});
 })
 
