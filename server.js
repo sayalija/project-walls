@@ -8,8 +8,8 @@ const token = process.env.GITHUB_TOKEN;
 
 let data={data:{}};
 const githubQuery=new GithubQuery(token,query,(body)=>{
-  console.log("Received update...");
   data=JSON.parse(body);
+  console.log("Recived data...\n", data);
 });
 
 githubQuery.fetch();
@@ -17,8 +17,13 @@ githubQuery.fetch();
 app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
-  console.log(data);
   res.render('index', {projectsData: data.data});
+})
+
+app.get('/:project', function(req, res) {
+  console.log(req.params.project);
+  let projectDetails=data.data[req.params.project].projects.nodes[0];
+  res.render('project', {projectDetails});
 })
 
 app.listen(3000, () => console.log('App listening on port 3000!'));
