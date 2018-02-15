@@ -23,8 +23,12 @@ app.get('/', function(req, res) {
 app.get('/:project', function(req, res) {
   let projectName=req.params.project.toLowerCase();
   console.log("fecthing deatails for ", projectName);
-  let projectDetails=data.data[projectName].projects.nodes[0];
-  res.render('project', {projectDetails});
+  if(data.data[projectName]) {
+    let projectDetails=data.data[projectName].projects.nodes[0];
+    res.render('project', {projectDetails});
+  }
+
+  res.status(404).send(`Could not find details for project: ${projectName}`);
 })
 
 app.listen(3000, () => console.log('App listening on port 3000!'));
