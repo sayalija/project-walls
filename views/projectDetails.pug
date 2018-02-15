@@ -1,0 +1,12 @@
+mixin projectDetails(projectData)
+  div
+    h3= projectData.name
+    div(class="lanes")
+      - lanes=projectData.columns
+        each lane in lanes
+          div(class="lane")
+            span(class="lane-header")=lane.name
+            div(class="cards")
+              - let cards=lane.cards
+                each card in cards
+                  p(class="card-title")=card && card.title
