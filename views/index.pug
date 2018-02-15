@@ -9,3 +9,12 @@ html
         div(class="project")
           - let projectDetails=data.projects.nodes[0]
           h3= projectDetails.name
+          div(class="lanes")
+            - lanes=projectDetails.columns.nodes
+              each lane in lanes
+                div(class="lane")
+                  span(class="lane-header")=lane.name
+                  div(class="cards")
+                    - let cards=lane.cards.nodes
+                      each card in cards
+                        p(class="card-title")=card.content && card.content.title
