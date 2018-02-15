@@ -3,8 +3,8 @@ const app = express();
 
 const fs = require('fs');
 const query = fs.readFileSync('./graphql_query', 'utf8');
-const GithubQuery = require('./githubQuery.js');
-const Stagger = require('./stagger.js');
+const GithubQuery = require('./scripts/githubQuery.js');
+const Stagger = require('./scripts/stagger.js');
 
 const token = process.env.GITHUB_TOKEN;
 const PORT=process.env.PORT || 8080;
