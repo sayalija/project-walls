@@ -1,9 +1,11 @@
 h1.header {
   text-align: center;
+  background-color: #9e7cc1;
+  margin: 0;
+  padding: 20px;
 }
 
 div.lanes {
-  border: solid 1px;
   padding: 5px;
   margin: 5px;
   display: flex;
@@ -13,11 +15,6 @@ div.lanes {
 div.content {
   display: flex;
   flex-direction: column;
-}
-
-h3.project-name {
-  text-align: center;
-  margin: 5px;
 }
 
 div.card-content {
@@ -72,7 +69,7 @@ div.label.label-small {
   color: white;
   background-color: #006786bd;
  }
- 
+
 div.milestone {
   padding: 3px;
   width: 30px;
