@@ -2,16 +2,16 @@
   stratego: repository(owner: "STEP-tw", name: "stratego-gamblers") {
     ...projectDetails
   }
-  acquire: repository(owner: "STEP-tw",, name: "acquire-legends") {
+  acquire: repository(owner: "STEP-tw", name: "acquire-legends") {
     ...projectDetails
   }
-  ludo: repository(owner: "STEP-tw",, name: "ludo-dvamps") {
+  ludo: repository(owner: "STEP-tw", name: "ludo-dvamps") {
     ...projectDetails
   }
-  battleship: repository(owner: "STEP-tw",, name: "battleship-phoenix") {
+  battleship: repository(owner: "STEP-tw", name: "battleship-phoenix") {
     ...projectDetails
   }
-  cluedo: repository(owner: "STEP-tw",, name: "cluedo-brainyfools") {
+  cluedo: repository(owner: "STEP-tw", name: "cluedo-brainyfools") {
     ...projectDetails
   }
 }
@@ -35,6 +35,11 @@ fragment projectDetails on Repository {
                     nodes {
                       name
                       color
+                    }
+                  }
+                  assignees(first: 3) {
+                    nodes {
+                      name
                     }
                   }
                 }
