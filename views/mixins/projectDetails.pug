@@ -21,7 +21,7 @@ mixin showCard(card)
         +showLabels(card.labels)
 
 mixin projectDetails(projectData)
-  div.content
+  div.project-content
     h1.header=projectData.name
     div.lanes
       - let lanes=projectData.columns

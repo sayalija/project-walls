@@ -5,6 +5,18 @@ html
       include style.css
   body
     h1.header Project Dash Board
-    div
+    div.project-stat
       each projectData in data
-        +projectDetails(projectData)
+        div
+          h2.project-name=projectData.name
+          - let lanes=projectData.columns
+          table
+            thead
+              tr
+                th="lanes"
+                th="#cards"
+            tbody
+              each lane in lanes
+                tr
+                  td=lane.name
+                  td.no-of-cards=lane.cards.length

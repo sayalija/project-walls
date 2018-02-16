@@ -5,14 +5,14 @@ h1.header {
   padding: 20px;
 }
 
-div.lanes {
+div.project-content .lanes {
   padding: 5px;
   margin: 5px;
   display: flex;
   justify-content: space-between;
 }
 
-div.content {
+div.project-content {
   display: flex;
   flex-direction: column;
 }
@@ -24,11 +24,11 @@ div.card-content {
   align-items: center;
 }
 
-div.lane {
+div.project-content .lane {
   width: 12%;
 }
 
-h4.lane-title {
+.project-content .lane-title {
   margin: 5px;
   padding-bottom: 5px;
   text-align: center;
@@ -77,4 +77,23 @@ div.milestone {
   height: 20px;
   border-radius: 9px;
   text-align: center;
+}
+
+.project-name {
+  text-align: center;
+}
+
+th, td {
+   border: 1px solid black;
+   padding: 2px 12px;
+}
+
+
+table .no-of-cards {
+  text-align: center;
+}
+
+.project-stat {
+  display: flex;
+  justify-content: space-around;
 }
