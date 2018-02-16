@@ -1,27 +1,83 @@
-.lanes {
+h1.header {
+  text-align: center;
+}
+
+div.lanes {
+  border: solid 1px;
+  padding: 5px;
+  margin: 5px;
   display: flex;
   justify-content: space-between;
-  margin-left: 10px;
-}
-.lane {
-  border: solid 0.5px;
-  padding: 10px;
-  width: 12.5%;
-}
-.lane-header {
-  font-weight: bold;
-}
-.cards {
-  margin-top: 10px;
-}
-.card-title {
-  margin: 0px;
 }
 
-.card-title:nth-child(odd) {
-  background: #CCC;
+div.content {
+  display: flex;
+  flex-direction: column;
 }
 
-.card-title:nth-child(even) {
-  background: #EEE;
+h3.project-name {
+  text-align: center;
+  margin: 5px;
+}
+
+div.card-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
+}
+
+div.lane {
+  width: 12%;
+}
+
+h4.lane-title {
+  margin: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+div.card {
+    border: 1px solid;
+    padding: 10px;
+    /* box-shadow: 5px 10px 8px #CCC; */
+    margin-bottom: 5px;
+}
+
+.label {
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: 3px 0;
+}
+
+div.labels {
+  width: 50%;
+}
+
+div.label.label-large {
+  background-color: #d93f0b;
+}
+
+div.label.label-medium {
+  background-color: #fbca04;
+}
+
+div.label.label-small {
+  background-color: #0e8a16;
+}
+
+.label[class^="label-"] {
+  border: solid 1px;
+  border-color: black;
+  color: white;
+  background-color: #006786bd;
+ }
+ 
+div.milestone {
+  padding: 3px;
+  width: 30px;
+  background-color: #8892b99c;
+  height: 20px;
+  border-radius: 9px;
+  text-align: center;
 }

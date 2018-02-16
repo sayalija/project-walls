@@ -1,0 +1,34 @@
+mixin showLabels(labels)
+  div.labels
+    each label in labels
+      div(class=`label-${label.name}`, class="label")=label.name
+        
+mixin showAssignees(assignees)
+  div.assignees
+    each assignee in assignees
+      div.assignee=assignee.name
+
+mixin showCard(card)
+  div.card
+    div.title=card && card.title
+    div.card-content
+      - let milestone=card.milestone || {title: ""}
+      - let title=milestone.title.replace("Iteration", "It");
+        div.milestone=title
+      - if(card.assignees) 
+        //- +showAssignees(card.assignees)
+      - if(card.labels)
+        +showLabels(card.labels)
+
+mixin projectDetails(projectData)
+  div.content
+    h3.project-name=projectData.name
+    div.lanes
+      - let lanes=projectData.columns
+      each lane in lanes
+        div.lane
+          h4.lane-title=lane.name
+          - let cards=lane.cards
+          each card in cards
+            - if(card)
+              +showCard(card)

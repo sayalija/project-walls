@@ -1,8 +1,8 @@
-include ./projectDetails
+include ./mixins/projectDetails
 html
   head
     style
       include style.css
   body
-    h1 Project Dash Board
+    h1.header Project Dash Board
     +projectDetails(projectData)
