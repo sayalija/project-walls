@@ -1,8 +1,14 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 h1.header {
   text-align: center;
-  background-color: #9e7cc1;
+  font-size: 28px;
   margin: 0;
   padding: 20px;
+  border-bottom: 1px solid lightgray;
+  font-weight: 400;
 }
 
 div.project-content .lanes {
@@ -79,13 +85,62 @@ div.milestone {
   text-align: center;
 }
 
-.project-name {
+.project {
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.project .name {
   text-align: center;
+  color: black;
+  font-weight: 400;
+  margin-top: 0px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+  padding-bottom: 5px;
+}
+
+.Acquire {
+  border-left: 6px solid #e55d82;
+}
+
+.Stratego {
+  border-left: 6px solid #409edb;
+}
+
+.Ludo {
+  border-left: 6px solid #e8bd00;
+}
+
+.Battleship {
+  border-left: 6px solid #7b6500;
+}
+
+.Cluedo {
+  border-left: 6px solid #dd2020;
+}
+
+.project .stats {
+  border-collapse: collapse;
+  border-color: inherit;
+}
+
+.project .stats tr>*:first-child {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: inherit;
+}
+
+.project .stats tr:not(:first-child){
+  border-top-width: 1px;
+  border-top-style: solid;
 }
 
 th, td {
-   border: 1px solid black;
-   padding: 2px 12px;
+   padding: 6px 14px;
+   font-size: 14px;
+   font-weight: 300;
 }
 
 
@@ -93,7 +148,9 @@ table .no-of-cards {
   text-align: center;
 }
 
-.project-stat {
+.projects {
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }

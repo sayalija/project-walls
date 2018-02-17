@@ -1,20 +1,17 @@
 include ./mixins/projectDetails
 html
   head
+    link(href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet")
     style
       include style.css
   body
     h1.header Project Dash Board
-    div.project-stat
+    div.projects
       each projectData in data
-        div
-          h2.project-name=projectData.name
+        article(class=projectData.name class="project")
+          h2.name=projectData.name
           - let lanes=projectData.columns
-          table
-            thead
-              tr
-                th="lanes"
-                th="#cards"
+          table.stats
             tbody
               each lane in lanes
                 tr
